@@ -4614,9 +4614,9 @@ const W=1920,H=1080,PI=Math.PI,TAU=PI*2;
 const F='"Barlow","Segoe UI",system-ui,sans-serif';
 const stage=document.getElementById('stage'),cv=document.getElementById('c'),ctx=cv.getContext('2d');
 let K=1;
-const DEF={tech:false,glow:60,stars:true,brand:true,auto:true,speed:1,hide:true,end:'loop',off:{aj:[],cr:[]}};
+const DEF={tech:true,glow:60,stars:true,brand:true,auto:true,speed:1,hide:true,end:'loop',off:{aj:[],cr:[]}};
 let O={...DEF,off:{aj:[],cr:[],tw:[]}};try{const st=JSON.parse(localStorage.getItem('calian-gnss-settings')||'{}');delete st.tech;O={...O,...st};O.off={aj:[],cr:[],tw:[],...(st.off||{})}}catch(e){}
-O.tech=false; /* technical details always start OFF */
+O.tech=true; /* technical details always start ON */
 const save=()=>{try{const {tech,...rest}=O;localStorage.setItem('calian-gnss-settings',JSON.stringify(rest))}catch(e){}};
 const $=id=>document.getElementById(id);
 let GLOW=O.glow/100;
